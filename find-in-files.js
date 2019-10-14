@@ -20,8 +20,7 @@ app.use(upload.array());
 app.use(express.static("public"));
 
 app.post("/matchResult", async function(req, resp) {
-  console.log(__dirname)
-  let results = await findInFiles.find(req.body.to, __dirname, pattern);
+  let results = await findInFiles.find(req.body.to, ".", pattern);
   let finalArray = [];
   for (var result in results) {
     var res = results[result];
