@@ -1,0 +1,17 @@
+doctype html
+
+html(lang='en')
+  body
+    table.table.table-striped
+      tr
+        th File Name
+        th Matches
+        th Counts
+        th Line
+
+      each n in data
+        tr
+          td= n.fileName
+          td= n.value.matches[0]
+          td= n.value.count
+          td= n.value.line 
